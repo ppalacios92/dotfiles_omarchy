@@ -65,6 +65,11 @@ if [ -x "$REPO_DIR/scripts/set-background.sh" ]; then
     "$REPO_DIR/scripts/set-background.sh" || true
 fi
 
+if [ -x "$REPO_DIR/scripts/set-icon-theme.sh" ]; then
+    echo "Applying icon theme..."
+    "$REPO_DIR/scripts/set-icon-theme.sh" || true
+fi
+
 echo "Reloading Hyprland..."
 if command -v hyprctl >/dev/null 2>&1; then
     hyprctl reload || true
